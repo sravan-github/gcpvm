@@ -1,4 +1,4 @@
 provider "google" {
-  credentials = "${file("./key1.json")}"
+  credentials = "${file("./key.json")}"
   project     = "gcp-practice-project-340110"
 }
