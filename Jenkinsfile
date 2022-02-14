@@ -20,7 +20,7 @@ pipeline {
         stage('vault') {
             steps {
                 sh '''
-                ls -ltre
+                ls -ltr
                 ansible-vault decrypt key.json --vault-password-file pass --output key2.json
                 '''
             }
