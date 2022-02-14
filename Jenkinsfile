@@ -10,7 +10,7 @@ pipeline {
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
                    pwd
-                   chmod +x key.json
+                   chmod 777 key.json
                    ls -ltr
                    ansible-playbook decrypt.yml
                    #ansible-vault decrypt key.json --vault-password-file pass --output key2.json
