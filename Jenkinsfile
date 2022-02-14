@@ -9,7 +9,7 @@ pipeline {
                    #!/bin/bash
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
-                   ansible-playbook -vvv decrypt.yml -i hosts
+                   ansible-playbook -vvv decrypt.yml
                    pwd
                    ls -l
                    terraform init
