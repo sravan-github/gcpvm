@@ -20,8 +20,16 @@ pipeline {
         stage('vault') {
             steps {
                 sh '''
-                ls -ltr
                 ansible-vault decrypt key.json --vault-password-file pass --output key2.json
+                ls -ltr
+                '''
+            }
+          }
+        stage('terraform') {
+            steps {
+                sh '''
+                terraform init
+                terraform plan
                 '''
             }
           }
