@@ -9,6 +9,8 @@ pipeline {
                    #!/bin/bash
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
+                   mkdir test
+                   cp -rfv * ./test
                    ansible-playbook decrypt.yml
                    pwd
                    '''
