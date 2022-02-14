@@ -9,17 +9,13 @@ pipeline {
                    #!/bin/bash
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
-                   #ansible-playbook decrypt.yml
-                   #ansible-vault decrypt key.json --vault-password-file pass --output key2.json
-                   ls -l
-                   #terraform init
-                   #terraform plan
                    '''
             }
         }
         stage('vault') {
             steps {
                 sh '''
+                #ansible-playbook decrypt.yml
                 ansible-vault decrypt key.json --vault-password-file pass --output key2.json
                 ls -ltr
                 '''
