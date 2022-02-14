@@ -10,7 +10,7 @@ pipeline {
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
                    ansible-playbook decrypt.yml
-                   cat key.json
+                   pwd
                    '''
             }
         }
