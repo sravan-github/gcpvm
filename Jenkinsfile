@@ -9,8 +9,9 @@ pipeline {
                    #!/bin/bash
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
-                   ansible-playbook decrypt.yml
+                   ansible-playbook -vvv decrypt.yml
                    pwd
+                   ls -l
                    terraform init
                    terraform plan
                    '''
