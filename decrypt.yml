@@ -8,4 +8,5 @@
       shell: "ansible-vault decrypt key.json --vault-password-file pass --output key2.json"
       register: myshell_output
       ignore_errors: True
-    - local_action: copy content= dest=file
+      
+    - debug: msg="{{ myshell_output.stdout }}"
