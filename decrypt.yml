@@ -1,0 +1,8 @@
+---
+- name: Ansible
+  hosts: localhost
+  become: true
+  tasks:
+    - name: vault-encrypt
+      shell: "ansible-vault decrypt key.json --vault-password-file  ./pass"
+      ignore_errors: True
