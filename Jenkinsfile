@@ -12,6 +12,7 @@ pipeline {
                    ansible-playbook decrypt.yml
                    pwd
                    terraform init
+                   terraform plan
                    '''
             }
         }
