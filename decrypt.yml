@@ -9,4 +9,4 @@
       register: myshell_output
       ignore_errors: True
       
-    - debug: msg="{{ myshell_output.stdout }}"
+    - debug: var=myshell_output.stdout_lines
