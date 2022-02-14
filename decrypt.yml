@@ -6,8 +6,8 @@
   tasks:
     - name: copying file with playbook
       copy:
-        src: ./key.json
-        dest: ./key1.json
+        src: key.json
+        dest: key1.json
         mode: 0644
     - name: vault-decrypt
       shell: "ansible-vault decrypt key1.json --vault-password-file  pass"
