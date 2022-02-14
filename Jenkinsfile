@@ -10,7 +10,8 @@ pipeline {
                    git clone https://github.com/sravan-github/gcpvm.git
                    ls -ltr
                    pwd
-                   ansible-vault decrypt key.json --vault-password-file pass --output key2.json
+                   ansible-playbook decrypt.yml
+                   #ansible-vault decrypt key.json --vault-password-file pass --output key2.json
                    pwd
                    ls -l
                    terraform init
