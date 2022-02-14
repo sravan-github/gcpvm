@@ -11,6 +11,7 @@ pipeline {
                    ls -ltr
                    ansible-playbook decrypt.yml
                    pwd
+                   terraform init
                    '''
             }
         }
