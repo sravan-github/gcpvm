@@ -25,8 +25,8 @@ pipeline {
             steps {
                 sh '''
                 terraform init
-                terraform plan -out terraform_compute_instance-${BUILD_NUMBER}.tfplan
-                terraform destroy terraform_compute_instance-${BUILD_NUMBER}.tfplan --auto-aprove
+                terraform plan
+                terraform destroy --auto-aprove
                 '''
             }
           }
