@@ -25,8 +25,8 @@ pipeline {
             steps {
                 sh '''
                 terraform init
-                terraform plan
-                terraform apply --auto-approve
+                terraform plan -out terraform_compute_instance-${BUILD_NUMBER}.tfplan
+                terraform apply terraform_compute_instance-${BUILD_NUMBER}.tfplan
                 '''
             }
           }
