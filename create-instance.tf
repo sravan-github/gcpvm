@@ -20,7 +20,7 @@ resource "google_compute_instance" "default" {
 //metadata = {
 //   ssh-keys = "user1:${file("/home/sravangcp/sshkey")}"
 // }
-    metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 -y && echo Hello world from $(hostname)$(hostname -I) > /var/www/html/index.html"
+    metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 -y && sudo apt install python -y && echo Hello world from $(hostname)$(hostname -I) > /var/www/html/index.html"
     tags = ["http-server"]
 }
 
