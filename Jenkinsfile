@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'sravangcpdocker/terraform:2' }
+        docker { 
+            image 'sravangcpdocker/terraform:2'
+            args '-u root:root'
+        }
     }
     environment {
        passwd=credentials('password') 
