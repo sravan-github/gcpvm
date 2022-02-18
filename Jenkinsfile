@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                 #ansible-playbook decrypt.yml
-                ansible-vault decrypt key.json --vault-password-file pass --output key2.json
+                ansible-vault decrypt key.json --vault-password-file password --output key2.json
                 ls -ltr
                 '''
             }
@@ -26,7 +26,6 @@ pipeline {
                 sh '''
                 terraform init
                 terraform plan
-                terraform destroy --auto-aprove
                 '''
             }
           }
