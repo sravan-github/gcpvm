@@ -2,6 +2,9 @@ pipeline {
     agent {
         docker { image 'sravangcpdocker/terraform:2' }
     }
+    environment {
+       passwd=credentials('password') 
+      }
     stages {
         stage('git-clone') {
             steps {
@@ -16,7 +19,7 @@ pipeline {
             steps {
                 sh '''
                 #ansible-playbook decrypt.yml
-                ansible-vault decrypt key.json --vault-password-file password --output key2.json
+                ansible-vault decrypt key.json --vault-password-file $passwd --output key2.json
                 ls -ltr
                 '''
             }
